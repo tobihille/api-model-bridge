@@ -26,8 +26,21 @@ class Tobihille_ApiModelBridge_Model_Api extends Mage_Api_Model_Resource_Abstrac
       {
         foreach ($input->join as $joinEntity)
         {
-          //                      alias             entity           condition
-          $collection->join(array($joinEntity[1] => $joinEntity[0]), $joinEntity[2]);
+          if ( !empty($joinEntity->fields) )
+          {
+            $collection->join(
+              array($joinEntity->alias => $joinEntity->table),
+              $joinEntity->condition,
+              $joinEntity->fields
+            );
+          }
+          else
+          {
+            $collection->join(
+                array($joinEntity->alias => $joinEntity->table),
+                $joinEntity->condition
+            );
+          }
         }
       }
     }
@@ -51,7 +64,9 @@ class Tobihille_ApiModelBridge_Model_Api extends Mage_Api_Model_Resource_Abstrac
       $select->limit($input->limit);
     }
 
-    $data = $select.' ';
+    $data = Mage::getSingleton('core/resource')->
+        getConnection('core_read')->
+        fetchAll( $collection->getSelectSql() );
 
     return json_encode($data);
   }
