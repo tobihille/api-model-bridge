@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+  <api>
+
+    <acl>
+      <resources>
+        <apimodelbridge translate="title" module="apimodelbridge">
+          <title>Api-Model-Bridge - use with care</title>
+          <sort_order>100</sort_order>
+        </apimodelbridge>
+      </resources>
+    </acl>
+
+    <resources>
+      <apimodelbridge>
+        <model>apimodelbridge/api</model>
+        <title>Access all Models</title>
+        <acl>apimodelbridge</acl>
+        <methods>
+          <get translate="title" module="apimodelbridge">
+            <title>Fetch data from arbitrary models</title>
+            <method>fetchData</method>
+          </get>
+
+          <put translate="title" module="apimodelbridge">
+            <title>Insert or update data to arbitrary models, no joins allowed</title>
+            <method>putData</method>
+          </put>
+
+          <delete translate="title" module="apimodelbridge">
+            <title>Delete data from arbitrary models, usw with care!</title>
+            <method>deleteData</method>
+          </delete>
+
+        </methods>
+      </apimodelbridge>
+    </resources>
+
+    <resources_alias>
+      <apimodelbridge>apimodelbridge</apimodelbridge>
+    </resources_alias>
+
+    <v2>
+      <resources_function_prefix>
+        <apimodelbridge>apimodelbridge</apimodelbridge>
+      </resources_function_prefix>
+    </v2>
+  </api>
+</config>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+  <acl>
+    <resources>
+      <admin>
+        <children>
+          <system>
+            <children>
+              <api>
+                <children>
+                  <apimodelbridge>
+                    <title>Api-Model-Bridge</title>
+                    <sort_order>19</sort_order>
+                  </apimodelbridge>
+                </children>
+              </api>
+            </children>
+          </system>
+        </children>
+      </admin>
+    </resources>
+  </acl>
+</config>

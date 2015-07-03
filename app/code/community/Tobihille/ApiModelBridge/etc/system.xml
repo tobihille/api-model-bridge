@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+  <sections>
+      <api>
+        <groups>
+          <apimodelbridge translate="label">
+            <label>Api-ModelBridge</label>
+            <frontend_type>text</frontend_type>
+            <sort_order>150</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <fields>
+              <enable translate="label comment">
+                <label>Enable ApiModelBringe?</label>
+                <comment><![CDATA[<span style="color: red; font-weight: bold">Note:</span><br/>
+Due to the nature of this module there is no further acl than 'access'.<br/>
+If access is granted every model can be fetched, updated and deleted.<br/>
+Use with <b>extreme</b> care or disable it completely when you are not certain that you need it.]]></comment>
+                <frontend_type>select</frontend_type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <sort_order>5</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+              </enable>
+            </fields>
+          </apimodelbridge>
+        </groups>
+      </api>
+  </sections>
+</config>

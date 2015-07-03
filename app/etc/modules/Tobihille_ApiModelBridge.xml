@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Tobihille_ApiModelBridge>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Tobihille_ApiModelBridge>
+  </modules>
+</config>
