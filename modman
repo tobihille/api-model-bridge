@@ -1,3 +1,2 @@
 app/code/community/Tobihille/ApiModelBridge
 app/etc/modules/Tobihille_ApiModelBridge.xml
-apiTest.php

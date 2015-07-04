@@ -28,11 +28,11 @@
   </message>
 
   <message name="apimodelbridgePutResponse">
-    <part name="result" type="xsd:boolean" />
+    <part name="result" type="xsd:string" />
   </message>
 
   <message name="apimodelbridgeDeleteResponse">
-    <part name="result" type="xsd:boolean" />
+    <part name="result" type="xsd:string" />
   </message>
 
   <portType name="{{var wsdl.handler}}PortType">
