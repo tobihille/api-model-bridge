@@ -7,8 +7,20 @@ Mage::app('admin');
 $input = array(
   'main_table' => 'sales/order',
   'join' => array(
-    array('sales/order_item', 'sfoi', 'sfoi.order_id = main_table.entity_id'),
-    array('catalog/product', 'cpe', 'cpe.sku = sfoi.sku')
+    array(
+      'table' => 'sales/order_item',
+      'alias' => 'sfoi',
+      'condition' => 'sfoi.order_id = main_table.entity_id',
+      'fields' =>
+        array('parent_item_id',
+          'product_id',
+          'name'
+        )
+    ),
+    array(
+      'table' => 'catalog/product',
+      'alias' => 'cpe',
+      'condition' => 'cpe.sku = sfoi.sku')
   ),
   'where' => array(
     'sfoi.product_type' => array('eq' => 'simple'),
