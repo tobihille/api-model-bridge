@@ -18,5 +18,9 @@ I'm aware that once granted access the api-user can literally do evererything, t
 - If you didn't uderstood one of the above points or if you're not met by "When to use this module"
 - If you are even more concerned about security than me
 
+# How to use
+
+- Take a look at apiTest.php there is an example for every method.
 
 ##### If you really want to use this in production take care to not deploy apiTest.php scince with correct parameters it can delete at least some of your products or expose orders.
+
