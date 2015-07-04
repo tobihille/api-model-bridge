@@ -95,16 +95,6 @@ $delete = array(
   )
 );
 
-$data = Mage::getModel('apimodelbridge/api')->putData( json_encode($putInsert) );
-echo $data;
-
-$delete['ids'] = json_decode($data);
-
-$data = Mage::getModel('apimodelbridge/api')->deleteData( json_encode($delete) );
-echo $data;
-
-die('ende');
-
 if ( $argv['mode'] == 'model')
 {
   if ( $argv['method'] == 'get' )
