@@ -9,7 +9,11 @@ class Tobihille_ApiModelBridge_Model_Api extends Mage_Api_Model_Resource_Abstrac
 
     if ( !Mage::getStoreConfig('api/apimodelbridge/enable') )
     {
-      return json_encode($data);
+      if ( !Mage::getStoreConfig('api/apimodelbridge/return_fault') )
+      {
+        return json_encode($data);
+      }
+      $this->_fault('module_disabled');
     }
 
     $input = json_decode($json);
@@ -81,12 +85,20 @@ class Tobihille_ApiModelBridge_Model_Api extends Mage_Api_Model_Resource_Abstrac
 
     if ( !Mage::getStoreConfig('api/apimodelbridge/enable') )
     {
-      return json_encode($result);
+      if ( !Mage::getStoreConfig('api/apimodelbridge/return_fault') )
+      {
+        return json_encode($result);
+      }
+      $this->_fault('module_disabled');
     }
 
     if ( !Mage::getStoreConfig('api/apimodelbridge/enable_put') )
     {
-      return json_encode($result);
+      if ( !Mage::getStoreConfig('api/apimodelbridge/return_fault') )
+      {
+        return json_encode($result);
+      }
+      $this->_fault('put_disabled');
     }
 
     $input = json_decode($json);
@@ -121,12 +133,20 @@ class Tobihille_ApiModelBridge_Model_Api extends Mage_Api_Model_Resource_Abstrac
 
     if ( !Mage::getStoreConfig('api/apimodelbridge/enable') )
     {
-      return json_encode($result);
+      if ( !Mage::getStoreConfig('api/apimodelbridge/return_fault') )
+      {
+        return json_encode($result);
+      }
+      $this->_fault('module_disabled');
     }
 
     if ( !Mage::getStoreConfig('api/apimodelbridge/enable_delete') )
     {
-      return json_encode($result);
+      if ( !Mage::getStoreConfig('api/apimodelbridge/return_fault') )
+      {
+        return json_encode($result);
+      }
+      $this->_fault('delete_disabled');
     }
 
     $input = json_decode($json);

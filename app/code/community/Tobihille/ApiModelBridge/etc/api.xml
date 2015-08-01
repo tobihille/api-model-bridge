@@ -45,5 +45,27 @@
         <apimodelbridge>apimodelbridge</apimodelbridge>
       </resources_function_prefix>
     </v2>
+
+    <faults>
+      <unknown>
+        <code>0</code>
+        <message>Unknown Error</message>
+      </unknown>
+
+      <module_disabled>
+        <code>100</code>
+        <message>The module is disabled, you need to go to config and enable it to use this method.</message>
+      </module_disabled>
+
+      <put_disabled>
+        <code>200</code>
+        <message>Put is disabled, you need to go to config and enable it to use this method.</message>
+      </put_disabled>
+
+      <delete_disabled>
+        <code>300</code>
+        <message>Delete is disabled, you need to go to config and enable it to use this method.</message>
+      </delete_disabled>
+    </faults>
   </api>
 </config>

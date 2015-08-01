@@ -23,4 +23,14 @@
 
   </global>
 
+  <default>
+    <api>
+      <apimodelbridge>
+        <enable>1</enable>
+        <enable_put>0</enable_put>
+        <enable_delete>0</enable_delete>
+        <return_fault>1</return_fault>
+      </apimodelbridge>
+    </api>
+  </default>
 </config>
